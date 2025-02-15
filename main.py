@@ -4,15 +4,15 @@ from PIL import ImageTk, Image
 class App:  #Création de la classe servant principalement à utiliser des variables golobales
     def __init__(self):
         self.config_parking = Tk()                          #Création de la 1ère fenêtre
-        self.config_parking.geometry("300x120")
+        self.config_parking.geometry("340x120")
         self.config_parking.bind("<Return>", self.valider)
         self.config_parking.focus_force()
         self.entry = Entry(self.config_parking)             #Création de la barre de saisie
         self.entry.place(x = 25, y = 80)
         self.entry.focus()
-        Label(self.config_parking, text = "OU").place(x = 155, y = 50)
-        self.config_groupe = Button(self.config_parking, text = "Config du groupe", command = self.config_gr)
-        self.config_groupe.place(x = 180, y = 50)
+        Label(self.config_parking, text = "OU").place(x = 163, y = 50)
+        self.config_groupe = Button(self.config_parking, text = "Config par défaut", command = self.config_gr)
+        self.config_groupe.place(x = 200, y = 50)
 
         #Initialisation des variables
         self.park_config = []
@@ -93,9 +93,9 @@ class App:  #Création de la classe servant principalement à utiliser des varia
         self.config_parking.destroy()
         self.parking_visu = Tk()    #Création de la fenêtre principale (parking)
         self.parking_visu.geometry("1020x600")
-        image_de_fond_right = ImageTk.PhotoImage(Image.open("image_de_fond_right.jpg"))
-        image_de_fond_left = ImageTk.PhotoImage(Image.open("image_de_fond_left.jpg"))
-        image_de_fond_bottom = ImageTk.PhotoImage(Image.open("image_de_fond_bottom.jpg"))
+        image_de_fond_right = ImageTk.PhotoImage(Image.open("resources/image_de_fond_right.jpg"))
+        image_de_fond_left = ImageTk.PhotoImage(Image.open("resources/image_de_fond_left.jpg"))
+        image_de_fond_bottom = ImageTk.PhotoImage(Image.open("resources/image_de_fond_bottom.jpg"))
 
         self.parking_visu.focus_force()
 
